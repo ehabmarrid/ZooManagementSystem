@@ -1,0 +1,36 @@
+<project name="ZooManagementSystem" default="run" basedir=".">
+
+    <!-- Define the classpath of the project -->
+    <path id="classpath">
+        <fileset dir="." includes="**/*.jar"/>
+        <fileset dir="${basedir}/lib" includes="**/*.jar"/>
+        <pathelement path="."/>
+    </path>
+
+    <!-- Define the main class of the project -->
+    <property name="main-class" value="ZooManagementSystem.Main"/>
+
+    <!-- Compile the Java files -->
+    <target name="compile" description="Compile the java files">
+        <javac srcdir="." destdir="." classpathref="classpath" source="1.8" target="1.8" includes="**/*.java"/>
+    </target>
+
+    <!-- Build the project -->
+    <target name="build" depends="compile" description="Build the project">
+    </target>
+
+    <!-- Run the project -->
+    <target name="run" depends="build" description="Run the project">
+        <java classname="${main-class}" fork="true" spawn="false">
+            <classpath classpathref="classpath"/>
+        </java>
+    </target>
+
+    <!-- Clean the project -->
+    <target name="clean" description="Clean the build files">
+        <delete>
+            <fileset dir="." includes="**/*.class"/>
+        </delete>
+    </target>
+
+</project>
