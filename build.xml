@@ -3,7 +3,7 @@
     <!-- Define the classpath of the project -->
     <path id="classpath">
         <fileset dir="." includes="**/*.jar"/>
-        <fileset dir="${basedir}" includes="**/*.jar"/>
+<!--         <fileset dir="${basedir}" includes="**/*.jar"/> -->
         <pathelement path="."/>
     </path>
 
