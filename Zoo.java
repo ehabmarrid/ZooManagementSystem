@@ -408,19 +408,21 @@ public class Zoo {
 
 
 	public String Add_New_Penguin(String name_p,double height_p,int age_p) throws HeightException, AgeException {
-		try {
-		AgeException ageException = new AgeException();
-		ageException.AgeValidator(age_p);
-		HeightException heightException = new HeightException();
-		heightException.HeightIsIllegal(height_p);
-		}
-		catch (HeightException e0){
-			height_p = Main.heightExceptionPenguin();
-			
-		}
-		catch(AgeException e1) {
-			age_p = Main.ageExceptionPenguin();
-			
+		if(numberOfPenguins>0){
+			try {
+			AgeException ageException = new AgeException();
+			ageException.AgeValidator(age_p);
+			HeightException heightException = new HeightException();
+			heightException.HeightIsIllegal(height_p);
+			}
+			catch (HeightException e0){
+				height_p = Main.heightExceptionPenguin();
+				
+			}
+			catch(AgeException e1) {
+				age_p = Main.ageExceptionPenguin();
+				
+			}
 		}
 		Penguin newPenguin = new Penguin(name_p,age_p,height_p);
 		addPenguin(newPenguin);
