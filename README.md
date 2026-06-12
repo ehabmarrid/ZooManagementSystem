@@ -1,21 +1,28 @@
 # Zoo Management System
 
-Zoo Management System is a Java and MySQL course project for managing animals, enclosures, workers, visitors, tickets, feeding tasks, and medical records.
+![Java](https://img.shields.io/badge/Java-17-orange)
+![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
+![Maven](https://img.shields.io/badge/Maven-Build-red)
+![Tests](https://img.shields.io/badge/Tests-JUnit%205-green)
 
-![Console menu preview](docs/screenshots/console-menu.svg)
+A Java and MySQL application for managing zoo operations.
 
-## Current Focus
+![Console menu](docs/screenshots/console-menu.svg)
 
-The project now prioritizes features that show database relationships, OOP, layered architecture, business logic, and tests:
+## Features
 
-1. Animal CRUD connected to MySQL.
-2. Enclosure capacity validation.
-3. Worker assignments to animals or enclosures.
-4. Feeding schedule and completion tracking.
-5. Ticket sales and revenue reporting.
-6. Medical history per animal.
-7. JUnit tests for service/business rules.
-8. ER diagram and screenshots in the README.
+- Animal CRUD operations
+- Enclosure capacity validation
+- Worker assignments
+- Feeding schedule and completion tracking
+- Medical records
+- Ticket sales and revenue reporting
+- JUnit service tests
+- ER diagram and console screenshot
+
+## Project Evolution
+
+Originally developed as an object-oriented programming course project and later modernized with MySQL persistence, layered architecture, service-level business rules, Maven, and automated tests.
 
 ## Architecture
 
