@@ -47,7 +47,16 @@ Modernized the old GitHub project version for continued development:
 - Added JUnit tests for capacity validation and ticket revenue report validation.
 - Renamed ReadMe.txt to README.md and added ER diagram, screenshot preview, setup instructions, and testing instructions.
 
+----------------------------------------
+Version 2.1 - 13/6/26
+Repository cleanup and Maven project layout:
+- Replaced the legacy Ant build workflow with a Maven Java 17 GitHub Actions workflow.
+- Removed generated files, IDE configuration, compiled classes, and the committed MySQL connector jar from version control.
+- Switched the MySQL connector to a normal Maven dependency.
+- Moved source code to src/main/java, tests to src/test/java, and SQL setup files to src/main/resources.
+- Removed stale root-level Java copies that duplicated the packaged source code.
+
 Known issues / setup notes:
-- DB-backed menu options require MySQL to be running and the schema/sample data loaded with DataBase.sql and sample.sql.
+- DB-backed menu options require MySQL to be running and the schema/sample data loaded from src/main/resources/DataBase.sql and src/main/resources/sample.sql.
 - Local Homebrew MySQL may fail to start if an old MySQL 8.3 data directory is used with MySQL 9.6; migrate/dump the old data or reinitialize the local MySQL data directory.
-- Maven currently references the local MySQL connector jar from lib/, which works for this project but shows a portability warning.
+- Use Maven commands such as mvn test and mvn exec:java so dependencies are resolved from pom.xml.

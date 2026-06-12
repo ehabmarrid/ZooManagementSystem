@@ -19,7 +19,15 @@ The project now prioritizes features that show database relationships, OOP, laye
 
 ## Architecture
 
-The source is organized by responsibility:
+The project uses the standard Maven folder layout:
+
+```text
+src/main/java/ZooManagementSystem/    Application source packages
+src/main/resources/                   SQL schema and sample data
+src/test/java/ZooManagementSystem/    JUnit tests
+```
+
+The source packages are organized by responsibility:
 
 ```text
 ZooManagementSystem.app          Console entry point
@@ -40,8 +48,8 @@ ZooManagementSystem.exceptions   Validation exceptions
 Create and seed the MySQL database:
 
 ```bash
-mysql -u root -p < DataBase.sql
-mysql -u root -p zoo_database < sample.sql
+mysql -u root -p < src/main/resources/DataBase.sql
+mysql -u root -p zoo_database < src/main/resources/sample.sql
 ```
 
 Configure credentials outside the code:
@@ -159,16 +167,16 @@ erDiagram
 
 ## Running
 
-Compile with the local MySQL connector:
+Compile with Maven:
 
 ```bash
-javac -cp lib/mysql-connector-j-9.0.0.jar -d out/production/ZooManagementSystem $(find app zoo animals common people tickets promotions data exceptions models services -name '*.java')
+mvn compile
 ```
 
 Run the console application:
 
 ```bash
-java -cp out/production/ZooManagementSystem:lib/mysql-connector-j-9.0.0.jar ZooManagementSystem.app.Main
+mvn exec:java
 ```
 
 ## Tests
@@ -196,4 +204,3 @@ The console menu includes database-backed options for:
 ```
 
 These options use the `services` package, which keeps business rules separate from menu input and JDBC code.
-
