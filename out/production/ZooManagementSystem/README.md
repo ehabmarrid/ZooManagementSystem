@@ -197,3 +197,6 @@ The console menu includes database-backed options for:
 
 These options use the `services` package, which keeps business rules separate from menu input and JDBC code.
 
+## Next Steps
+
+The clean next iteration is to add more JUnit coverage around repositories with a test database, then polish the console prompts for repeated operational use.
